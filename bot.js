@@ -30,7 +30,7 @@ client.on('ready', () => {
 
 client.on('ready', () => {
 
-    client.user.setActivity("i!help,Made By IOTE",{type: 'Streaming'})
+    client.user.setActivity(",Made By IOTE",{type: 'Streaming'})
 
 });
 
@@ -119,7 +119,7 @@ args.send({embed : embed});
 });
 
 client.on("message", message => {
-    var prefix = "$";//البرفكس
+    var prefix = "i!";//البرفكس
 if(message.content.startsWith(prefix + "setout")) {
     let args = message.mentions.channels.first();
         if(!args) message.channel.send("** منشن روم . :x:**");
@@ -168,7 +168,7 @@ client.on('message', function(msg) {
 
   client.on('message', message =>{
     let args = message.content.split(' ');
-    let prefix = '$'; 
+    let prefix = 'i!'; 
     
     if(args[0] === `i!{prefix}avatar`){
         let mentions = message.mentions.members.first()
@@ -177,13 +177,13 @@ client.on('message', function(msg) {
           let embed = new Discord.RichEmbed()
           .setImage(message.author.avatarURL)
           .setColor("#f7abab") 
-          .setDescription(`**${message.author.username}#${message.author.discriminator}**'s avatar :`);
+          .setDescription(`**i!{message.author.username}#${message.author.discriminator}**'s avatar :`);
           message.channel.send({embed})
         } else {
           let sicon = mentions.user.avatarURL
           let embed = new Discord.RichEmbed()
           .setColor("#f7abab")
-          .setDescription(`**${mentions.user.username}#${mentions.user.discriminator}**'s avatar :`)
+          .setDescription(`**i!{mentions.user.username}#${mentions.user.discriminator}**'s avatar :`)
           .setImage(sicon)
           message.channel.send({embed})
         }
@@ -394,7 +394,7 @@ client.on('message', async message => {
 
  client.on('message', message => {
     if(!message.channel.guild) return;
-var prefix = "$";
+var prefix = "i!";
                if(message.content.startsWith(prefix + 'allbots')) {
 
    
@@ -510,7 +510,7 @@ client.on('message', message => {
             });  
 
      client.on('message', message => {
-                    var prefix = "$";
+                    var prefix = "i!";
                            if(message.content === prefix + "mutechannel") {
                                                if(!message.channel.guild) return message.reply('** This command only for servers**');
                     
@@ -600,7 +600,7 @@ client.on('message', message => {
                         });
                         
                         client.on("message", (message) => {
-                        if (message.content.startsWith("$ct")) {
+                        if (message.content.startsWith("i!ct")) {
                                     if (!message.member.hasPermission('MANAGE_CHANNELS')) return message.reply("You Don't Have `MANAGE_CHANNELS` Premissions ");
                                 let args = message.content.split(" ").slice(1);
                             message.guild.createChannel(args.join(' '), 'text');
@@ -611,7 +611,7 @@ client.on('message', message => {
                         
                         
                         client.on("message", (message) => {
-                        if (message.content.startsWith("$cv")) {
+                        if (message.content.startsWith("i!cv")) {
                                     if (!message.member.hasPermission('MANAGE_CHANNELS')) return message.reply("You Don't Have `MANAGE_CHANNELS` Premissions ");
                                 let args = message.content.split(" ").slice(1);
                             message.guild.createChannel(args.join(' '), 'voice');
@@ -622,7 +622,7 @@ client.on('message', message => {
                         
                         
                         client.on("message", (message) => {
-                            if (message.content.startsWith('$delete')) {
+                            if (message.content.startsWith('i!delete')) {
                                 if (!message.member.hasPermission('MANAGE_CHANNELS')) return message.reply("You Don't Have `MANAGE_CHANNELS` Premissions ");
                         
                                 let args = message.content.split(' ').slice(1);
@@ -686,12 +686,12 @@ client.on("voiceStateUpdate", (o,n) => {
 
 
 client.on('message', msg => {
-    if(msg.content.startsWith('$invitebot')) {
+    if(msg.content.startsWith('i!invitebot')) {
     if(msg.channel.type === 'dm') return;
 const user = msg.mentions.users.first();
 if(!user) return msg.channel.send('``' + '**قم بتحديد بوت**' + '``')
 if(!user.bot) return msg.reply('\`منشن بوت\`');
-msg.channel.send(`**Bot InviteURL : ** https://discordapp.com/oauth2/authorize?client_id=${user.id}&scope=bot&permissions=384064`)
+msg.channel.send(`**Bot InviteURL : **beta `)
     }
 });
 
@@ -701,14 +701,14 @@ client.on('message',function(message) {
 let args = message.content.split(" ").slice(1).join(" ");
 if(message.content.startsWith(prefix + "say")) {
 if(!args) return;
-message.channel.send(`**# ${args}**`); // محطوط # عشان محد يستخدم البوت لتبنيد / طرد احد من السيرفر
+message.channel.send(`**# i!{args}**`); // محطوط # عشان محد يستخدم البوت لتبنيد / طرد احد من السيرفر
 }
 });
 
 
 client.on("message", (message) => {
     /// ALPHA CODES
-   if (message.content.startsWith("$ticket")) {     /// ALPHA CODES
+   if (message.content.startsWith("i!ticket")) {     /// ALPHA CODES
         const reason = message.content.split(" ").slice(1).join(" ");     /// ALPHA CODES
         if (!message.guild.roles.exists("name", "Support Team")) return message.channel.send(`لازم تسوي رتبه اسمه Support Team`);
         if (message.guild.channels.exists("name", "ticket-{message.author.id}" + message.author.id)) return message.channel.send(`You already have a ticket open.`);    /// ALPHA CODES
@@ -928,7 +928,7 @@ client.on("message", message => {
   
   
   client.on('message' , async message => {
-	  var prefix = "-";
+	  var prefix = "i!";
          if(message.content.startsWith(prefix + "emoji")) {
             let args = message.content.split(" ").slice(1);
     if (args.length < 1) {
@@ -1001,7 +1001,7 @@ var Za7f = [
 ];
 
 client.on('message', message => {
- if (message.content.startsWith("$عقاب")) {
+ if (message.content.startsWith("i!عقاب")) {
               if(!message.channel.guild) return message.reply('** This command only for servers**');
 var embed = new Discord.RichEmbed()
 .setColor('RANDOM')
@@ -1233,7 +1233,7 @@ if(!args[0]) return message.reply('مرجو كتابة نص الدي تريد');
 
 
 client.on('message', message => {
-    if (message.content == "$quas") {
+    if (message.content == "i!quas") {
          message.react('🤔','👌')
         var x = ['اين يلعب مصطفي فتحي؟', 'ما هو اسم ملعب بارشالونة', 'ما هو يوم الحج الأكبر؟', 'ما هو أطول أنهار أوربا ؟', 'ما هو اسم بيت الدجاج', 'ما هو أول بنك قام بالنشاط المصرفي في السعودية عام 1926م' , 'ما هو أول جامع أقيم في مصر','ما هو أطول نهر في آسيا','ما هو أقرب كوكب إلى الشمس','ما هو الحيوان الذي يُسمى البهنس','ما هو اول مسجد أسس بالمدينة','متى وقع صلح الحديبية عام 6هـ او 3هـ او 2هـ؟','متى قامت أمريكا بأول رحلة فضائية','متى كانت غزوة خيبر؟','ما هي السورة التي تبدأ بقوله تعالى " يا أيها النبي اتق الله ولا تطع الكافرين والمنافقين إن الله كان عليما حكيما ".اجب؟','ما هي السورة التي يطلق عليها عروس القرآن','ماذا يسمى من لايقرأ ولايكتب','ماهي أول دولة استخدمت طابع البريد','ماهو شعار الولايات المتحدة الامريكية','ماهو اذكي الحيوانات','من هو مكتشف أمريكا','مامعنى "فرعون" اجب؟','ماهو اقرب كوكب إلى الارض','ما هي نسبه المياه من الكره الارضيه?','كم عدد السجدات في القرآن الكريم؟','من هو بطل كاس العالم في عام 1966','أين أفتتح اول متحف في العالم?','ماأسم أنثى الحمار?','كم تبلغ درجه حراره الشمس؟','من هي مدينة الضباب','أين توجد أطول سكة حديد في العالم?'
         ];
