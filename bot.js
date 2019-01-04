@@ -30,7 +30,7 @@ client.on('ready', () => {
 
 client.on('ready', () => {
 
-    client.user.setActivity(",Made By IOTE",{type: 'Streaming'})
+    client.user.setActivity(",IOTE Games",{type: 'Watching'})
 
 });
 
